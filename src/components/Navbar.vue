@@ -1,6 +1,6 @@
 <template>
   <nav>
-      <ul class="nav-links" :class="{'hide': showBars, 'visible':!showBars}">
+      <ul class="nav-links" :class="{'visible': showBars, 'hide':!showBars}">
           <slot></slot>
       </ul>
   </nav>
@@ -34,10 +34,12 @@ export default {
         right: 0;
         top: 90px;
         bottom: 0;
-        /* width: auto; */
+        width: auto;
         height: auto;
         flex-direction: column;
         background-color: rgba(0, 0, 0, 0.9);
+        overflow: hidden;
+        transition: all .6s ease-in-out
         
     }
 
