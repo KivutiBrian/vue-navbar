@@ -1,0 +1,44 @@
+<template>
+  <div>
+    <i :class="icon"></i>
+    <!-- <a class="nav-link" :href="url">
+      <slot></slot>
+    </a> -->
+    <router-link class="nav-link" :to="url">
+      <slot></slot>
+    </router-link>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'NavLink',
+  props: {
+    icon: String,
+    url: String
+  }
+
+
+}
+</script>
+
+<style scoped>
+
+.nav-link{
+  color: #fff;
+  margin: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.5s ease-in;
+}
+
+.nav-link:hover{
+  color: #4361ee;
+}
+
+@media screen and (max-width: 768px){
+    
+}
+
+
+</style>
