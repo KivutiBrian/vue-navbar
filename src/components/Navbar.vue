@@ -1,7 +1,7 @@
 <template>
   <nav>
       <ul class="nav-links" :class="{'visible': showBars, 'hide':!showBars}">
-          <slot></slot>
+          <slot ></slot>
       </ul>
   </nav>
 </template>

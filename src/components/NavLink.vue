@@ -4,7 +4,7 @@
     <!-- <a class="nav-link" :href="url">
       <slot></slot>
     </a> -->
-    <router-link class="nav-link" :to="url">
+    <router-link @click="$emit('hide-dropdown', false)" class="nav-link" :to="url">
       <slot></slot>
     </router-link>
   </div>
@@ -16,7 +16,7 @@ export default {
   props: {
     icon: String,
     url: String
-  }
+  },
 
 
 }

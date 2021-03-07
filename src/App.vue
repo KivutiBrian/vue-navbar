@@ -10,14 +10,14 @@
       
       <template v-slot:navbar>
         <navbar :showBars="showBars" class="nav">
-          <nav-link @click="toggleBars" class="link" url="/">Home</nav-link>
+          <nav-link @hide-dropdown="hideDropDown" class="link" url="/">Home</nav-link>
           <nav-link class="link" url="/about">Services</nav-link>
           <nav-link class="link" url="/">Products</nav-link>
         </navbar>
 
         <i @click="toggleBars" 
         class="fas bars"
-        v-bind:class="{'fa-times':showBars, 'fa-bars':!showBars}"></i>
+        :class="{'fa-times':showBars, 'fa-bars':!showBars}"></i>
 
         
       </template>
@@ -53,7 +53,11 @@ export default {
   methods:{
     toggleBars(){
       this.showBars = !this.showBars
-      console.log(this.showBars)
+    },
+    hideDropDown(state){
+      this.showBars = state
+      console.log("hello")
+      console.log("state",state)
     }
   }
 }
