@@ -4,7 +4,7 @@
     <!-- <a class="nav-link" :href="url">
       <slot></slot>
     </a> -->
-    <router-link @click="$emit('hide-dropdown', false)" class="nav-link" :to="url">
+    <router-link @click.native="$emit('hide-dropdown', false)" class="nav-link" :to="url">
       <slot></slot>
     </router-link>
   </div>
@@ -17,6 +17,11 @@ export default {
     icon: String,
     url: String
   },
+  methods:{
+    hello(){
+      console.log("Hello")
+    }
+  }
 
 
 }

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <Header>
+    <Header  >
       <template v-slot:logo>
         <h1 class="brand">M<span class="uer">uer</span></h1>
 
@@ -11,8 +11,8 @@
       <template v-slot:navbar>
         <navbar :showBars="showBars" class="nav">
           <nav-link @hide-dropdown="hideDropDown" class="link" url="/">Home</nav-link>
-          <nav-link class="link" url="/about">Services</nav-link>
-          <nav-link class="link" url="/">Products</nav-link>
+          <nav-link @hide-dropdown="hideDropDown" class="link" url="/about">Services</nav-link>
+          <nav-link @hide-dropdown="hideDropDown" class="link" url="/">Products</nav-link>
         </navbar>
 
         <i @click="toggleBars" 
@@ -56,8 +56,6 @@ export default {
     },
     hideDropDown(state){
       this.showBars = state
-      console.log("hello")
-      console.log("state",state)
     }
   }
 }
